@@ -17,7 +17,11 @@ fun AppNavGraph() {
         startDestination = Destinations.FEED
     ) {
         composable(Destinations.FEED) {
-            StockFeedScreen()
+            StockFeedScreen(
+                onNavigateToDetails = { symbol ->
+                    navController.navigate(Destinations.detailsRoute(symbol))
+                }
+            )
         }
 
         composable(
