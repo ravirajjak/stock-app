@@ -5,4 +5,5 @@
     <string name="lbl_real_time_update">Real-time updates</string>
     <string name="lbl_stock_feed">Stock Feed</string>
     <string name="lbl_status">Status</string>
+    <string name="lbl_closed_by_user">Closed by user</string>
 </resources>

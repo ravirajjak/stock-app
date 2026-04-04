@@ -1,7 +1,6 @@
 package com.indie.stockapp.features.stocks.di
 
-import com.indie.multigroupbank.features.stocks.data.repository.StockRepositoryImpl
-import com.indie.multigroupbank.features.stocks.domain.repository.StockRepository
+import com.indie.stockapp.features.stocks.data.repository.StockRepositoryImpl
 import com.indie.stockapp.features.stocks.domain.repository.StockRepository
 import dagger.Binds
 import dagger.Module

@@ -1,9 +1,12 @@
 package com.indie.stockapp.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
+import androidx.navigation.navDeepLink
 import com.indie.stockapp.features.stocks.presentation.detail.StockDetailsScreen
 import com.indie.stockapp.features.stocks.presentation.feed.StockFeedScreen
 
@@ -26,8 +29,20 @@ fun AppNavGraph() {
 
         composable(
             route = Destinations.DETAILS_ROUTE,
+            arguments = listOf(
+                navArgument(Destinations.SYMBOL_ARG) {
+                    type = NavType.StringType
+                }
+            ),
+            deepLinks = listOf(
+                navDeepLink {
+                    uriPattern = "stocks://symbol/{${Destinations.SYMBOL_ARG}}"
+                }
+            )
         ) {
-            StockDetailsScreen()
+            StockDetailsScreen(
+                onBack = { navController.popBackStack() }
+            )
         }
     }
 }
